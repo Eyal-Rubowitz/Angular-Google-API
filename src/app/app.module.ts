@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
-import { AppComponent } from './app.component';
-
+import { AgmCoreModule } from '@agm/core';
+import { App } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyD17i3GjIo1-UoZlkTKkrK4xRuy5Tc6Ny4",
+      libraries: ["places"]
+    }),
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ App ],
+  bootstrap: [App]
 })
 export class AppModule { }
